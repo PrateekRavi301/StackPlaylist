@@ -11,7 +11,7 @@ int main()
 	int leftmax[n],rightmax[n];
 	//MAximum in left side of array
 	int lval =a[0];
-	leftmax[0]=0;
+	leftmax[0]=lval;
 	for(int i=1;i<n;i++){
 		if(a[i]>lval){
 			
@@ -21,7 +21,7 @@ int main()
 	}
 	//Maximum in right side of array
 	int rval = a[n-1];
-	rightmax[n-1]= 0;
+	rightmax[n-1]= rval;
 	for(int i=n-2;i>=0;i--){
 		if(a[i]>rval){
 			
@@ -34,7 +34,7 @@ int main()
 	for(int i=0;i<n;i++){
 		height[i] = min(leftmax[i],rightmax[i]) - a[i];
 		cout<<height[i]<<endl;
-		if(height[i]>0)result+=height[i];
+		result+=height[i];
 	}
 	cout<<"Rain Water Trapped : "<<result;
 	return 0;
